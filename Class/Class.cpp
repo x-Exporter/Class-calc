@@ -47,14 +47,27 @@ public:
 	bool set_num1(double num1)
 	{
 
-		this->num1 = num1;
-		return true;
+		if (num1 != 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
 	}
 
 	bool set_num2(double num2)
 	{
-		this->num2 = num2;
-		return true;
+		if (num2 != 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 };
 
@@ -67,24 +80,30 @@ int main()
 		int num1;
 		cout << "Введите num1: ";
 		cin >> num1;
-		while (num1 == 0)
+		if (!calc.set_num1(num1))
 		{
-			cout << "Неверный ввод!\n";
-			cout << "Введите num1: ";
-			cin >> num1;
+			while (calc.set_num1(num1) != true)
+			{
+				cout << "Неверный ввод!\n";
+				cout << "Введите num1: ";
+				cin >> num1;
+			}
 		}
+		
 
 		calc.set_num1(num1);
 		int num2;
 		cout << "Введите num2: ";
 		cin >> num2;
-		while (num2 == 0)
+		if (!calc.set_num2(num2))
 		{
-			cout << "Неверный ввод!\n";
-			cout << "Введите num2: ";
-			cin >> num2;
+			while (calc.set_num2(num2) != true)
+			{
+				cout << "Неверный ввод!\n";
+				cout << "Введите num2: ";
+				cin >> num2;
+			}
 		}
-
 		calc.set_num2(num2);
 		cout << "num1 + num2 = " << calc.add() << endl;
 		cout << "num1 - num2 = " << calc.subtract_1_2() << endl;
