@@ -49,6 +49,7 @@ public:
 
 		if (num1 != 0)
 		{
+			this->num1 = num1;
 			return true;
 		}
 		else
@@ -62,6 +63,7 @@ public:
 	{
 		if (num2 != 0)
 		{
+			this->num2 = num2;
 			return true;
 		}
 		else
@@ -104,7 +106,6 @@ int main()
 				cin >> num2;
 			}
 		}
-		calc.set_num2(num2);
 		cout << "num1 + num2 = " << calc.add() << endl;
 		cout << "num1 - num2 = " << calc.subtract_1_2() << endl;
 		cout << "num2 - num1 = " << calc.subtract_2_1() << endl;
